@@ -3,7 +3,7 @@
  */
 
 /**
- * Parse the time to string
+ * 转换时间为字符串
  * @param {(Object|string|number)} time
  * @param {string} cFormat
  * @returns {string | null}
@@ -52,6 +52,7 @@ export function parseTime(time, cFormat) {
 }
 
 /**
+ * 格式化时间
  * @param {number} time
  * @param {string} option
  * @returns {string}

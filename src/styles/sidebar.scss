@@ -13,13 +13,13 @@
     background-color: $menuBg;
     height: 100%;
     position: fixed;
-    font-size: 0px;
+    font-size: 0;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1001;
     overflow: hidden;
-
+    box-shadow: 0 7px 7px 7px rgba(0 0 0 / 5%);
     // reset element-ui css
     .horizontal-collapse-transition {
       transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
@@ -30,7 +30,7 @@
     }
 
     .el-scrollbar__bar.is-vertical {
-      right: 0px;
+      right: 0;
     }
 
     .el-scrollbar {
@@ -54,6 +54,7 @@
     }
 
     .svg-icon {
+      font-size: 20px;
       margin-right: 16px;
     }
 

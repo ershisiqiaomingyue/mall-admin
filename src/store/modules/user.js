@@ -29,7 +29,7 @@ const mutations = {
 
 const actions = {
   // user login
-  login({ commit }, userInfo) {
+  /* login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
@@ -41,10 +41,15 @@ const actions = {
         reject(error)
       })
     })
+  }, */
+  login({ commit }) {
+    const data ={'token': 'admin'}
+    setToken(data.token)
+    commit('SET_TOKEN',data.token)
   },
 
   // get user info
-  getInfo({ commit, state }) {
+  /* getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       getInfo(state.token).then(response => {
         const { data } = response
@@ -62,6 +67,20 @@ const actions = {
         reject(error)
       })
     })
+  }, */
+  getInfo({ commit, state }) {
+    const data = {
+      'roles':'admin',
+      'name':'admin',
+      'avatar':"https://qiniuyun.zxpersonalweb.top/%E5%A4%B4%E5%83%8F.jpg"
+    }
+    if (data.roles && data.roles.length > 0) { // 验证返回的roles是否是一个非空数组
+      commit('SET_ROLES', data.roles)
+    } else {
+      reject('getInfo: roles must be a non-null array !')
+    }
+    commit('SET_NAME', data.name)
+    commit('SET_AVATAR', data.avatar)
   },
 
   // user logout
